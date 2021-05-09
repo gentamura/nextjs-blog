@@ -10,7 +10,7 @@ export default function Post({ postData }) {
     <Layout>
       <Head>
         <title>{postData.title}</title>
-        <meta
+        {/* <meta
           key="og:image"
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -21,7 +21,7 @@ export default function Post({ postData }) {
           key="og:title"
           name="og:title"
           content={postData.title}
-        />
+        /> */}
       </Head>
 
       <article>
