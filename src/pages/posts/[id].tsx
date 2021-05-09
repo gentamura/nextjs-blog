@@ -11,12 +11,17 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
         <meta
+          key="og:image"
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
             postData.title
           )}.png?theme=dark&md=0&fontSize=50px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-white.svg"`}
         />
-        <meta name="og:title" content={postData.title} />
+        <meta
+          key="og:title"
+          name="og:title"
+          content={postData.title}
+        />
       </Head>
 
       <article>
