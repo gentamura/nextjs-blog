@@ -14,9 +14,11 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <section className={utilStyles.headingMd}>
-        <p>I'm a Web Frontend Developer in 🇯🇵.</p>
+        <h2 className={utilStyles.headingLg}>Hi 👋</h2>
+        <p>I'm a Web Frontend Developer in 🇯🇵</p>
+        <p>It’s pleasure to meet you 🤝</p>
 
-        <h2 className={utilStyles.headingLg}>Personal Links</h2>
+        <h2 className={utilStyles.headingLg}>Links</h2>
         <ul>
           <li><a href="https://github.com/gentamura" target="_blank">GitHub</a></li>
           <li><a href="https://twitter.com/gentamura84" target="_blank">Twitter</a></li>
@@ -24,9 +26,10 @@ export default function Home({ allPostsData }) {
           <li><a href="https://qiita.com/GenTamura84/contributions" target="_blank">Qiita</a></li>
           <li><a href="https://teratail.com/users/gentamura" target="_blank">teratail</a></li>
           <li><a href="https://note.com/gentamura84" target="_blank">note</a></li>
+          <li><a href="https://zenn.dev/gentamura" target="_blank">Zenn</a></li>
         </ul>
 
-        <h2 className={utilStyles.headingLg}>Personal Apps</h2>
+        <h2 className={utilStyles.headingLg}>Apps</h2>
         <ul>
           <li><a href="https://www.npmjs.com/package/gentamura-cli" target="_blank">gentamura-cli</a></li>
           <li><a href="https://www.npmjs.com/package/ts-tree-structure" target="_blank">ts-tree-structure</a></li>
