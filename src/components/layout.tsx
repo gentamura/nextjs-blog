@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
 
 const name = 'Gen Tamura'
 export const siteTitle = 'Gen Tamura - Web Frontend Developer'
 
-export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
+interface Props {
+  children: React.ReactNode;
+  home?: boolean;
+}
+
+const Layout: FC<Props> = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -78,6 +77,13 @@ export default function Layout({
           </Link>
         </div>
       )}
+
+      <footer className={styles.footer}>
+        <div>© <a href="https://twitter.com/gentamura84">gentamura84</a></div>
+        <small>このサイトはGoogle Analyticsを使用しています。詳細は<a href="https://policies.google.com/technologies/partner-sites?hl=ja">こちら</a>。</small>
+      </footer>
     </div>
   )
 }
+
+export default Layout;

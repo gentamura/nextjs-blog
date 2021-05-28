@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import Head from 'next/head'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Layout from '../../components/layout'
@@ -5,7 +6,11 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-export default function Post({ postData }) {
+interface Props {
+  postData: Post;
+}
+
+const Post: FC<Props> = ({ postData }) => {
   return (
     <Layout>
       <Head>
@@ -51,3 +56,5 @@ export const getStaticProps: GetStaticProps =  async ({ params }) => {
     }
   }
 }
+
+export default Post;

@@ -7,9 +7,10 @@ import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export function getSortedPostsData() {
-  // /posts　配下のファイル名を取得する
+const getSortedPostsData = (): PostMeta[] => {
+  // /posts 配下のファイル名を取得する
   const fileNames = fs.readdirSync(postsDirectory)
+
   const allPostsData = fileNames.map(fileName => {
     // id を取得するためにファイル名から ".md" を削除する
     const id = fileName.replace(/\.md$/, '')
@@ -27,6 +28,7 @@ export function getSortedPostsData() {
       ...(matterResult.data as { date: string; title: string })
     }
   })
+
   // 投稿を日付でソートする
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
@@ -37,7 +39,7 @@ export function getSortedPostsData() {
   })
 }
 
-export function getAllPostIds() {
+const getAllPostIds = (): Param[] => {
   const fileNames = fs.readdirSync(postsDirectory)
 
   // 以下のような配列を返します:
@@ -62,7 +64,7 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id) {
+const getPostData = async (id): Promise<Post> => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -80,5 +82,11 @@ export async function getPostData(id) {
     id,
     contentHtml,
     ...(matterResult.data as { date: string; title: string })
-  }
+  };
 }
+
+export {
+  getSortedPostsData,
+  getAllPostIds,
+  getPostData,
+};
