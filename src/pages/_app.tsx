@@ -1,6 +1,12 @@
-import '../styles/global.css'
-import { AppProps } from 'next/app'
+import React, { FC } from 'react';
+import type { AppProps } from 'next/app';
+import usePageView from '~/hooks/usePageView';
+import '~/styles/global.css';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+  usePageView();
+
+  return <Component {...pageProps} />;
 }
+
+export default App;
