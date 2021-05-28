@@ -1,5 +1,10 @@
-{
+const path = require('path');
+
+module.export = {
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
   "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
@@ -18,7 +23,12 @@
   "settings": {
     "react": {
       "version": "detect"
-    }
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": path.join(__dirname, '/config/webpack.config.js')
+      }
+    },
   },
   "rules": {
     "react/react-in-jsx-scope": 0,
@@ -44,4 +54,4 @@
       }
     ]
   }
-}
+};

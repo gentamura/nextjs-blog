@@ -7,7 +7,7 @@ import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-const getSortedPostsData: PostMeta[] = () => {
+const getSortedPostsData = (): PostMeta[] => {
   // /posts 配下のファイル名を取得する
   const fileNames = fs.readdirSync(postsDirectory)
 
@@ -39,7 +39,7 @@ const getSortedPostsData: PostMeta[] = () => {
   })
 }
 
-const getAllPostIds: Param[] = () => {
+const getAllPostIds = (): Param[] => {
   const fileNames = fs.readdirSync(postsDirectory)
 
   // 以下のような配列を返します:
@@ -64,7 +64,7 @@ const getAllPostIds: Param[] = () => {
   })
 }
 
-const getPostData: Post = async (id) => {
+const getPostData = async (id): Promise<Post> => {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 

@@ -6,7 +6,11 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-const Post: FC = ({ postData }) => {
+interface Props {
+  postData: Post;
+}
+
+const Post: FC<Props> = ({ postData }) => {
   return (
     <Layout>
       <Head>
