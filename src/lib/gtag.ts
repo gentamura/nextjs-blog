@@ -1,7 +1,9 @@
+const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 // IDが取得できない場合を想定する
-const existsGaId = GA_ID !== '';
+// const existsGaId = GA_ID !== '';
+const existsGaId = false; // TODO: Debug only GTM with stop GA.
 
 // PVを測定する
 const pageview = (path: string): void => {
@@ -22,6 +24,7 @@ const event = ({ action, category, label, value = '' }: GaEvent): void => {
 };
 
 export {
+  GTM_ID,
   GA_ID,
   existsGaId,
   pageview,
