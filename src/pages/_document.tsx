@@ -6,6 +6,11 @@ class Document extends NextDocument {
     return (
       <Html lang="ja">
         <Head>
+          {/* Google fonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/ >
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+
           {/* Google Tag Manager */}
           <script dangerouslySetInnerHTML={{ __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
