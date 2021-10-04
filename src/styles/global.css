@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype-variations');
+}
+
 html,
 body {
   padding: 0;
