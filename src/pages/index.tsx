@@ -38,6 +38,7 @@ const Home: FC<Props> = ({ allPostsData }) => {
         <ul>
           <li><a href="https://www.npmjs.com/package/gentamura-cli">gentamura-cli</a></li>
           <li><a href="https://www.npmjs.com/package/ts-tree-structure">ts-tree-structure</a></li>
+          <li><a href="https://color-palette-psi.vercel.app/">[WIP] Color Palette</a></li>
           <li>...</li>
         </ul>
       </section>
