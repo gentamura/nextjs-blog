@@ -1,13 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import remark from 'remark'
+import { remark } from 'remark'
 import html from 'remark-html'
 
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-const getSortedPostsData = (): PostMeta[] => {
+const getSortedPostsData = (): PostMeta[] | [] => {
   // /posts 配下のファイル名を取得する
   const fileNames = fs.readdirSync(postsDirectory)
 
@@ -23,14 +23,14 @@ const getSortedPostsData = (): PostMeta[] => {
     const matterResult = matter(fileContents)
 
     // データを id と合わせる
-    return {
+    return matterResult.data.isPublish ? {
       id,
-      ...(matterResult.data as { date: string; title: string })
-    }
+      ...(matterResult.data as { date: string; title: string, isPublish: boolean })
+    } : null;
   })
 
   // 投稿を日付でソートする
-  return allPostsData.sort((a, b) => {
+  return allPostsData.filter(args => null !== args).sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
@@ -81,7 +81,7 @@ const getPostData = async (id): Promise<Post> => {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string })
+    ...(matterResult.data as { date: string; title: string; isPublish: boolean })
   };
 }
 
