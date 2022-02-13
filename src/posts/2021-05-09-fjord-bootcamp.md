@@ -1,6 +1,7 @@
 ---
 title: 'フィヨルドブートキャンプに参加しました'
 date: '2021-05-09T16:39+09:00'
+isPublish: false
 ---
 
 [フィヨルドブートキャンプ](https://bootcamp.fjord.jp/) に、今月から参加しました。
