@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 
-const name = 'Gen Tamura'
-export const siteTitle = 'Gen Tamura - Web Frontend Developer'
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from './layout.module.css';
+import utilStyles from '../styles/utils.module.css';
+
+const name = 'Gen Tamura';
+export const siteTitle = 'Gen Tamura - Web Frontend Developer';
 
 interface Props {
   children: React.ReactNode;
@@ -17,10 +18,7 @@ const Layout: FC<Props> = ({ children, home }) => {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
           key="og:image"
           property="og:image"
@@ -28,11 +26,7 @@ const Layout: FC<Props> = ({ children, home }) => {
             siteTitle
           )}.png?theme=dark&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-white.svg`}
         />
-        <meta
-          key="og:title"
-          name="og:title"
-          content={siteTitle}
-        />
+        <meta key="og:title" name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
@@ -79,11 +73,12 @@ const Layout: FC<Props> = ({ children, home }) => {
       )}
 
       <footer className={styles.footer}>
-        <div>© <a href="https://twitter.com/gentamura84">gentamura84</a></div>
-        <small>このサイトはGoogle Analyticsを使用しています。詳細は<a href="https://policies.google.com/technologies/partner-sites?hl=ja">こちら</a>。</small>
+        <div>
+          © <a href="https://twitter.com/gentamura84">gentamura84</a>
+        </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
 export default Layout;
